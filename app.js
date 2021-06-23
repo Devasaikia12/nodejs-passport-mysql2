@@ -15,7 +15,6 @@ app.set('view engine', 'ejs')
 //--app setup body parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-//---routes include here--
 
 //--- set session --
 app.use(
@@ -43,6 +42,5 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/user'))
 app.use('/dashboard', require('./routes/dashboard'))
-
 
 module.exports = app
