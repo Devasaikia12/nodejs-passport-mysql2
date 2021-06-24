@@ -55,7 +55,7 @@ router.route('/register').post(async (req, res) => {
           data.password = hash
           //--save user to the database--
           user
-            .create('user', data)
+            .create(data)
             .then((u) => {
               req.flash(
                 'success_msg',

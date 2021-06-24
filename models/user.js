@@ -7,7 +7,7 @@ const findOne = async (table, fields, wherekey, wherevalue) => {
   )
   return data[0]
 }
-const create = async (table, data, cb) => {
+const create = async (data, cb) => {
   let keys = []
   let values = []
   Object.entries(data).forEach(([key, value]) => {
@@ -16,7 +16,7 @@ const create = async (table, data, cb) => {
   })
   try {
     const result = await db.query(
-      `INSERT INTO ${table} (${keys}) VALUES (${values})`
+      `INSERT INTO user (${keys}) VALUES (${values})`
     )
     if (result) {
       return result
